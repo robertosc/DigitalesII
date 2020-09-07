@@ -1,0 +1,90 @@
+$date
+	Sun Aug 23 11:42:06 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module BancoPruebas $end
+$var wire 1 ! sAlr_estr $end
+$var wire 1 " sPrta $end
+$var wire 1 # sLuz $end
+$var wire 1 $ sIgn $end
+$var wire 1 % sAlr_cond $end
+$scope module a_cond $end
+$var wire 1 " sPrta $end
+$var wire 1 # sLuz $end
+$var wire 1 $ sIgn $end
+$var reg 1 % sAlr $end
+$upscope $end
+$scope module prob $end
+$var wire 1 % sAlr_cond $end
+$var wire 1 ! sAlr_estr $end
+$var reg 1 & clk $end
+$var reg 1 $ sIgn $end
+$var reg 1 # sLuz $end
+$var reg 1 " sPrta $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0&
+0%
+0$
+0#
+0"
+z!
+$end
+#20
+1$
+1&
+#40
+0&
+#60
+1"
+0$
+1&
+#80
+0&
+#100
+1$
+1&
+#120
+0&
+#140
+1#
+0"
+0$
+1&
+#160
+0&
+#180
+1$
+1&
+#200
+0&
+#220
+1%
+1"
+0$
+1&
+#240
+0&
+#260
+0%
+1$
+1&
+#280
+0&
+#300
+0#
+0"
+0$
+1&
+#320
+0&
+#340
+1&

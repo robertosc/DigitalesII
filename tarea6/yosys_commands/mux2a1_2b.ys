@@ -1,0 +1,17 @@
+read_verilog ./src/mux2a1_2b/mux2a1_2b.v
+
+hierarchy -check -top mux2a1_2b
+
+proc; opt; memory; opt; fsm; opt;
+
+techmap; opt;
+
+dfflibmap -liberty ./lib/cmos_cells.lib
+
+show
+
+abc -liberty ./lib/cmos_cells.lib
+
+clean
+
+write_verilog sintetizado2a1_cmos.v

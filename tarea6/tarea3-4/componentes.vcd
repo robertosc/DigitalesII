@@ -1,0 +1,808 @@
+$date
+	Thu Sep  3 14:35:32 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module BancoPruebas $end
+$var wire 1 ! selector $end
+$var wire 1 " reset_L $end
+$var wire 1 # or_out $end
+$var wire 1 $ not_out $end
+$var wire 1 % mux_output $end
+$var wire 1 & in_B $end
+$var wire 1 ' in_A $end
+$var wire 2 ( ff_out [1:0] $end
+$var wire 2 ) data_in1 [1:0] $end
+$var wire 2 * data_in0 [1:0] $end
+$var wire 2 + data_estructural [1:0] $end
+$var wire 2 , data_cond [1:0] $end
+$var wire 1 - clk $end
+$var wire 1 . and_out $end
+$scope module comp_and $end
+$var wire 1 . and_output $end
+$var wire 1 & in_B $end
+$var wire 1 ' in_A $end
+$upscope $end
+$scope module comp_ff $end
+$var wire 2 / D [1:0] $end
+$var wire 1 - clk $end
+$var reg 2 0 Q [1:0] $end
+$upscope $end
+$scope module comp_not $end
+$var wire 1 $ not_output $end
+$var wire 1 ' in_A $end
+$upscope $end
+$scope module comp_or $end
+$var wire 1 # or_output $end
+$var wire 1 & in_B $end
+$var wire 1 ' in_A $end
+$upscope $end
+$scope module estr $end
+$var wire 1 ! selector $end
+$var wire 2 1 salMux2 [1:0] $end
+$var wire 2 2 salMux1 [1:0] $end
+$var wire 1 " reset_L $end
+$var wire 2 3 data_out [1:0] $end
+$var wire 2 4 data_in1 [1:0] $end
+$var wire 2 5 data_in0 [1:0] $end
+$var wire 1 - clk $end
+$scope module ff $end
+$var wire 1 - clk $end
+$var wire 2 6 D [1:0] $end
+$var reg 2 7 Q [1:0] $end
+$upscope $end
+$scope module mux1 $end
+$var wire 1 ! selector $end
+$var wire 2 8 mux_out [1:0] $end
+$var wire 2 9 in_B [1:0] $end
+$var wire 2 : in_A [1:0] $end
+$scope module muxA $end
+$var wire 1 ; in_A $end
+$var wire 1 < in_B $end
+$var wire 1 ! selector $end
+$var wire 1 = not_out $end
+$var wire 1 > mux_output $end
+$var wire 1 ? and_out2 $end
+$var wire 1 @ and_out1 $end
+$scope module andGate1 $end
+$var wire 1 @ and_output $end
+$var wire 1 ; in_A $end
+$var wire 1 = in_B $end
+$upscope $end
+$scope module andGate2 $end
+$var wire 1 ? and_output $end
+$var wire 1 < in_A $end
+$var wire 1 ! in_B $end
+$upscope $end
+$scope module negSelector $end
+$var wire 1 = not_output $end
+$var wire 1 ! in_A $end
+$upscope $end
+$scope module orGate $end
+$var wire 1 @ in_A $end
+$var wire 1 ? in_B $end
+$var wire 1 > or_output $end
+$upscope $end
+$upscope $end
+$scope module muxB $end
+$var wire 1 A in_A $end
+$var wire 1 B in_B $end
+$var wire 1 ! selector $end
+$var wire 1 C not_out $end
+$var wire 1 D mux_output $end
+$var wire 1 E and_out2 $end
+$var wire 1 F and_out1 $end
+$scope module andGate1 $end
+$var wire 1 F and_output $end
+$var wire 1 A in_A $end
+$var wire 1 C in_B $end
+$upscope $end
+$scope module andGate2 $end
+$var wire 1 E and_output $end
+$var wire 1 B in_A $end
+$var wire 1 ! in_B $end
+$upscope $end
+$scope module negSelector $end
+$var wire 1 C not_output $end
+$var wire 1 ! in_A $end
+$upscope $end
+$scope module orGate $end
+$var wire 1 F in_A $end
+$var wire 1 E in_B $end
+$var wire 1 D or_output $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module mux2 $end
+$var wire 2 G in_A [1:0] $end
+$var wire 2 H in_B [1:0] $end
+$var wire 1 " selector $end
+$var wire 2 I mux_out [1:0] $end
+$scope module muxA $end
+$var wire 1 J in_A $end
+$var wire 1 K in_B $end
+$var wire 1 " selector $end
+$var wire 1 L not_out $end
+$var wire 1 M mux_output $end
+$var wire 1 N and_out2 $end
+$var wire 1 O and_out1 $end
+$scope module andGate1 $end
+$var wire 1 O and_output $end
+$var wire 1 J in_A $end
+$var wire 1 L in_B $end
+$upscope $end
+$scope module andGate2 $end
+$var wire 1 N and_output $end
+$var wire 1 K in_A $end
+$var wire 1 " in_B $end
+$upscope $end
+$scope module negSelector $end
+$var wire 1 L not_output $end
+$var wire 1 " in_A $end
+$upscope $end
+$scope module orGate $end
+$var wire 1 O in_A $end
+$var wire 1 N in_B $end
+$var wire 1 M or_output $end
+$upscope $end
+$upscope $end
+$scope module muxB $end
+$var wire 1 P in_A $end
+$var wire 1 Q in_B $end
+$var wire 1 " selector $end
+$var wire 1 R not_out $end
+$var wire 1 S mux_output $end
+$var wire 1 T and_out2 $end
+$var wire 1 U and_out1 $end
+$scope module andGate1 $end
+$var wire 1 U and_output $end
+$var wire 1 P in_A $end
+$var wire 1 R in_B $end
+$upscope $end
+$scope module andGate2 $end
+$var wire 1 T and_output $end
+$var wire 1 Q in_A $end
+$var wire 1 " in_B $end
+$upscope $end
+$scope module negSelector $end
+$var wire 1 R not_output $end
+$var wire 1 " in_A $end
+$upscope $end
+$scope module orGate $end
+$var wire 1 U in_A $end
+$var wire 1 T in_B $end
+$var wire 1 S or_output $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module mux_BP $end
+$var wire 1 ! selector $end
+$var wire 1 V not_out $end
+$var wire 1 % mux_output $end
+$var wire 1 & in_B $end
+$var wire 1 ' in_A $end
+$var wire 1 W and_out2 $end
+$var wire 1 X and_out1 $end
+$scope module andGate1 $end
+$var wire 1 X and_output $end
+$var wire 1 V in_B $end
+$var wire 1 ' in_A $end
+$upscope $end
+$scope module andGate2 $end
+$var wire 1 W and_output $end
+$var wire 1 ! in_B $end
+$var wire 1 & in_A $end
+$upscope $end
+$scope module negSelector $end
+$var wire 1 V not_output $end
+$var wire 1 ! in_A $end
+$upscope $end
+$scope module orGate $end
+$var wire 1 X in_A $end
+$var wire 1 W in_B $end
+$var wire 1 % or_output $end
+$upscope $end
+$upscope $end
+$scope module p_cond $end
+$var wire 1 ! selector $end
+$var wire 1 " reset_L $end
+$var wire 2 Y data_in1 [1:0] $end
+$var wire 2 Z data_in0 [1:0] $end
+$var wire 1 - clk $end
+$var reg 2 [ data_out [1:0] $end
+$var reg 2 \ salMux1 [1:0] $end
+$upscope $end
+$scope module prob $end
+$var wire 1 . and_out $end
+$var wire 2 ] data_cond [0:1] $end
+$var wire 2 ^ data_estructural [0:1] $end
+$var wire 2 _ ff_out [0:1] $end
+$var wire 1 % mux_output $end
+$var wire 1 $ not_out $end
+$var wire 1 # or_out $end
+$var reg 1 - clk $end
+$var reg 4 ` contador_cond [3:0] $end
+$var reg 4 a contador_estr [3:0] $end
+$var reg 2 b data_in0 [0:1] $end
+$var reg 2 c data_in1 [0:1] $end
+$var reg 1 ' in_A $end
+$var reg 1 & in_B $end
+$var reg 1 " reset_L $end
+$var reg 1 ! selector $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 c
+b0 b
+b0 a
+b0 `
+bx _
+bx ^
+bx ]
+b0 \
+bx [
+b0 Z
+b0 Y
+xX
+xW
+xV
+xU
+xT
+xS
+xR
+xQ
+0P
+xO
+xN
+xM
+xL
+xK
+0J
+bx I
+bx H
+b0 G
+xF
+xE
+xD
+xC
+0B
+0A
+x@
+x?
+x>
+x=
+0<
+0;
+b0 :
+b0 9
+bx 8
+bx 7
+bx 6
+b0 5
+b0 4
+bx 3
+bx 2
+bx 1
+bx 0
+b11 /
+x.
+0-
+bx ,
+bx +
+b0 *
+b0 )
+bx (
+1'
+1&
+x%
+x$
+x#
+0"
+0!
+$end
+#21
+0F
+0@
+0W
+0T
+0U
+0N
+0O
+0E
+0?
+1.
+#30
+b0 ,
+b0 [
+b0 ]
+1"
+1-
+#35
+0$
+1V
+1C
+1=
+#37
+1#
+#51
+xT
+xN
+#54
+b11 (
+b11 0
+b11 _
+#56
+1X
+#60
+0-
+b1 /
+0'
+#61
+0Q
+0K
+0D
+b0 2
+b0 8
+b0 H
+0>
+#65
+0R
+0L
+#81
+0X
+0.
+#82
+0T
+0N
+#90
+1B
+1A
+1;
+b11 \
+b10 )
+b10 4
+b10 9
+b10 Y
+b10 c
+b11 *
+b11 5
+b11 :
+b11 Z
+b11 b
+1-
+#95
+1$
+#111
+1F
+1@
+#114
+b1 (
+b1 0
+b1 _
+#120
+0-
+0&
+b10 /
+1'
+#121
+0%
+#122
+0S
+b0 1
+b0 6
+b0 I
+0M
+#141
+1X
+#148
+1Q
+1K
+1D
+b11 2
+b11 8
+b11 H
+1>
+#150
+b1 `
+0B
+0A
+b0 \
+b11 ,
+b11 [
+b11 ]
+b0 )
+b0 4
+b0 9
+b0 Y
+b0 c
+b1 *
+b1 5
+b1 :
+b1 Z
+b1 b
+1!
+1-
+#155
+0$
+#169
+1T
+1N
+#171
+0F
+#174
+b10 (
+b10 0
+b10 _
+b0 +
+b0 3
+b0 7
+b0 ^
+#178
+1%
+#180
+0-
+b0 /
+0'
+#185
+0V
+0C
+0=
+#201
+0X
+#206
+0@
+1S
+b11 1
+b11 6
+b11 I
+1M
+#210
+1B
+0;
+b10 \
+b10 )
+b10 4
+b10 9
+b10 Y
+b10 c
+b0 *
+b0 5
+b0 :
+b0 Z
+b0 b
+b0 ,
+b0 [
+b0 ]
+1-
+#211
+0Q
+b1 2
+b1 8
+b1 H
+0D
+#215
+1$
+#220
+0#
+#231
+1E
+#232
+0T
+#234
+b1 a
+b11 +
+b11 3
+b11 7
+b11 ^
+b0 (
+b0 0
+b0 _
+#240
+0-
+1&
+b11 /
+1'
+#241
+0%
+#246
+0K
+b0 2
+b0 8
+b0 H
+0>
+#261
+1W
+1.
+#267
+0N
+#268
+1Q
+b10 2
+b10 8
+b10 H
+1D
+#270
+1<
+1A
+1;
+b11 \
+b10 ,
+b10 [
+b10 ]
+b11 )
+b11 4
+b11 9
+b11 Y
+b11 c
+b11 *
+b11 5
+b11 :
+b11 Z
+b11 b
+0!
+1-
+#272
+b1 1
+b1 6
+b1 I
+0S
+#275
+0$
+#277
+1#
+#289
+1T
+#291
+0W
+0E
+#294
+b11 (
+b11 0
+b11 _
+b1 +
+b1 3
+b1 7
+b1 ^
+#300
+0-
+b10 /
+0&
+#305
+1V
+1C
+1=
+#307
+b0 1
+b0 6
+b0 I
+0M
+#321
+0.
+#326
+1X
+1F
+1@
+b10 1
+b10 6
+b10 I
+1S
+#330
+0B
+0A
+0;
+b1 \
+b10 `
+b1 )
+b1 4
+b1 9
+b1 Y
+b1 c
+b0 *
+b0 5
+b0 :
+b0 Z
+b0 b
+1!
+b11 ,
+b11 [
+b11 ]
+1-
+#351
+0F
+0@
+1?
+#354
+b10 +
+b10 3
+b10 7
+b10 ^
+b10 (
+b10 0
+b10 _
+#360
+0-
+b11 /
+1&
+#363
+1K
+1%
+b11 2
+b11 8
+b11 H
+1>
+#365
+0V
+0C
+0=
+#381
+1W
+1.
+#384
+1N
+#386
+0X
+#390
+0<
+1A
+b10 \
+b1 ,
+b1 [
+b1 ]
+b0 )
+b0 4
+b0 9
+b0 Y
+b0 c
+b10 *
+b10 5
+b10 :
+b10 Z
+b10 b
+0!
+1-
+#391
+0Q
+b1 2
+b1 8
+b1 H
+0D
+#411
+0W
+0?
+#412
+0T
+#414
+b11 (
+b11 0
+b11 _
+#420
+0-
+0&
+b0 /
+0'
+#421
+b11 1
+b11 6
+b11 I
+1M
+#425
+1V
+1C
+1=
+#441
+0.
+#446
+1F
+#450
+1B
+1<
+0A
+1;
+b1 \
+b11 )
+b11 4
+b11 9
+b11 Y
+b11 c
+b1 *
+b1 5
+b1 :
+b1 Z
+b1 b
+0"
+b10 ,
+b10 [
+b10 ]
+1-
+#451
+0K
+0%
+b0 2
+b0 8
+b0 H
+0>
+#452
+b1 1
+b1 6
+b1 I
+0S
+#455
+1$
+#460
+0#
+#471
+0F
+1@
+0N
+#474
+b10 a
+b1 +
+b1 3
+b1 7
+b1 ^
+b0 (
+b0 0
+b0 _
+#480
+0-
+#485
+1R
+1L
+#508
+1K
+b1 2
+b1 8
+b1 H
+1>
+#510
+0B
+0<
+1A
+b11 \
+b0 ,
+b0 [
+b0 ]
+b0 )
+b0 4
+b0 9
+b0 Y
+b0 c
+b11 *
+b11 5
+b11 :
+b11 Z
+b11 b
+1-
+#511
+b0 1
+b0 6
+b0 I
+0M
+#531
+1F
+#534
+b0 +
+b0 3
+b0 7
+b0 ^
+#540
+0-
+#568
+1Q
+b11 2
+b11 8
+b11 H
+1D
+#570
+1-
+#600
+0-
+#630
+1-

@@ -1,0 +1,663 @@
+$date
+	Thu Sep  3 12:34:18 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module BancoPruebas $end
+$var wire 1 ! selector $end
+$var wire 1 " reset_L $end
+$var wire 1 # outOR $end
+$var wire 1 $ outNOT $end
+$var wire 1 % outFFD $end
+$var wire 1 & outAND $end
+$var wire 1 ' gate_stim_indiv $end
+$var wire 1 ( gate_stim2 $end
+$var wire 1 ) gate_stim1 $end
+$var wire 2 * data_out_estr [1:0] $end
+$var wire 2 + data_out_cond [1:0] $end
+$var wire 2 , data_in1 [1:0] $end
+$var wire 2 - data_in0 [1:0] $end
+$var wire 1 . clk $end
+$scope module andy $end
+$var wire 1 & OUT $end
+$var wire 1 ( B $end
+$var wire 1 ) A $end
+$upscope $end
+$scope module flopy $end
+$var wire 2 / D [1:0] $end
+$var wire 1 ) clk $end
+$var reg 2 0 Q [1:0] $end
+$upscope $end
+$scope module muxConductual $end
+$var wire 1 ! selector $end
+$var wire 1 " reset_L $end
+$var wire 2 1 data_in1 [1:0] $end
+$var wire 2 2 data_in0 [1:0] $end
+$var wire 1 . clk $end
+$var reg 2 3 data_out_cond [1:0] $end
+$var reg 2 4 salMux1 [1:0] $end
+$upscope $end
+$scope module muxEstructural $end
+$var wire 1 ! selector $end
+$var wire 2 5 salMux1 [1:0] $end
+$var wire 1 " reset_L $end
+$var wire 2 6 data_out_estr [1:0] $end
+$var wire 2 7 data_in1 [1:0] $end
+$var wire 2 8 data_in0 [1:0] $end
+$var wire 1 . clk $end
+$var wire 2 9 D [1:0] $end
+$scope module firstMux $end
+$var wire 1 ! SEL $end
+$var wire 2 : OUT [1:0] $end
+$var wire 2 ; B [1:0] $end
+$var wire 2 < A [1:0] $end
+$scope module mux0 $end
+$var wire 1 = A $end
+$var wire 1 > B $end
+$var wire 1 ? salNotSel $end
+$var wire 1 @ salAndB_Sel $end
+$var wire 1 A salAndA_notSel $end
+$var wire 1 ! SEL $end
+$var wire 1 B OUT $end
+$scope module andA_notSel $end
+$var wire 1 = A $end
+$var wire 1 A OUT $end
+$var wire 1 ? B $end
+$upscope $end
+$scope module andB_Sel $end
+$var wire 1 > A $end
+$var wire 1 @ OUT $end
+$var wire 1 ! B $end
+$upscope $end
+$scope module notSel $end
+$var wire 1 ? OUT $end
+$var wire 1 ! IN $end
+$upscope $end
+$scope module orOUT $end
+$var wire 1 A A $end
+$var wire 1 @ B $end
+$var wire 1 B OUT $end
+$upscope $end
+$upscope $end
+$scope module mux1 $end
+$var wire 1 C A $end
+$var wire 1 D B $end
+$var wire 1 E salNotSel $end
+$var wire 1 F salAndB_Sel $end
+$var wire 1 G salAndA_notSel $end
+$var wire 1 ! SEL $end
+$var wire 1 H OUT $end
+$scope module andA_notSel $end
+$var wire 1 C A $end
+$var wire 1 G OUT $end
+$var wire 1 E B $end
+$upscope $end
+$scope module andB_Sel $end
+$var wire 1 D A $end
+$var wire 1 F OUT $end
+$var wire 1 ! B $end
+$upscope $end
+$scope module notSel $end
+$var wire 1 E OUT $end
+$var wire 1 ! IN $end
+$upscope $end
+$scope module orOUT $end
+$var wire 1 G A $end
+$var wire 1 F B $end
+$var wire 1 H OUT $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module outFlop $end
+$var wire 1 . clk $end
+$var wire 2 I D [1:0] $end
+$var reg 2 J Q [1:0] $end
+$upscope $end
+$scope module secondMux $end
+$var wire 2 K A [1:0] $end
+$var wire 2 L B [1:0] $end
+$var wire 1 " SEL $end
+$var wire 2 M OUT [1:0] $end
+$scope module mux0 $end
+$var wire 1 N A $end
+$var wire 1 O B $end
+$var wire 1 P salNotSel $end
+$var wire 1 Q salAndB_Sel $end
+$var wire 1 R salAndA_notSel $end
+$var wire 1 " SEL $end
+$var wire 1 S OUT $end
+$scope module andA_notSel $end
+$var wire 1 N A $end
+$var wire 1 R OUT $end
+$var wire 1 P B $end
+$upscope $end
+$scope module andB_Sel $end
+$var wire 1 O A $end
+$var wire 1 Q OUT $end
+$var wire 1 " B $end
+$upscope $end
+$scope module notSel $end
+$var wire 1 P OUT $end
+$var wire 1 " IN $end
+$upscope $end
+$scope module orOUT $end
+$var wire 1 R A $end
+$var wire 1 Q B $end
+$var wire 1 S OUT $end
+$upscope $end
+$upscope $end
+$scope module mux1 $end
+$var wire 1 T A $end
+$var wire 1 U B $end
+$var wire 1 V salNotSel $end
+$var wire 1 W salAndB_Sel $end
+$var wire 1 X salAndA_notSel $end
+$var wire 1 " SEL $end
+$var wire 1 Y OUT $end
+$scope module andA_notSel $end
+$var wire 1 T A $end
+$var wire 1 X OUT $end
+$var wire 1 V B $end
+$upscope $end
+$scope module andB_Sel $end
+$var wire 1 U A $end
+$var wire 1 W OUT $end
+$var wire 1 " B $end
+$upscope $end
+$scope module notSel $end
+$var wire 1 V OUT $end
+$var wire 1 " IN $end
+$upscope $end
+$scope module orOUT $end
+$var wire 1 X A $end
+$var wire 1 W B $end
+$var wire 1 Y OUT $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module noty $end
+$var wire 1 $ OUT $end
+$var wire 1 ' IN $end
+$upscope $end
+$scope module ory $end
+$var wire 1 # OUT $end
+$var wire 1 ( B $end
+$var wire 1 ) A $end
+$upscope $end
+$scope module prob $end
+$var wire 2 Z data_out_cond [1:0] $end
+$var wire 2 [ data_out_estr [1:0] $end
+$var wire 1 & outAND $end
+$var wire 1 % outFFD $end
+$var wire 1 $ outNOT $end
+$var wire 1 # outOR $end
+$var reg 1 . clk $end
+$var reg 8 \ cnt [7:0] $end
+$var reg 2 ] data_in0 [1:0] $end
+$var reg 2 ^ data_in1 [1:0] $end
+$var reg 1 ) gate_stim1 $end
+$var reg 1 ( gate_stim2 $end
+$var reg 1 ' gate_stim_indiv $end
+$var reg 1 " reset_L $end
+$var reg 1 ! selector $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 ^
+b0 ]
+b0 \
+bx [
+bx Z
+xY
+xX
+xW
+xV
+xU
+0T
+xS
+xR
+xQ
+xP
+xO
+0N
+bx M
+bx L
+b0 K
+bx J
+bx I
+xH
+xG
+xF
+xE
+0D
+0C
+xB
+xA
+x@
+x?
+0>
+0=
+b0 <
+b0 ;
+bx :
+bx 9
+b0 8
+b0 7
+bx 6
+bx 5
+b0 4
+bx 3
+b0 2
+b0 1
+bx 0
+b1 /
+0.
+b0 -
+b0 ,
+bx +
+bx *
+1)
+1(
+1'
+x&
+x%
+x$
+x#
+0"
+0!
+$end
+#33
+1&
+0G
+0A
+0W
+0X
+0Q
+0R
+0F
+0@
+#40
+0$
+1E
+1?
+1V
+1P
+#50
+1%
+b1 0
+#58
+1#
+#60
+0'
+0)
+#89
+b0 +
+b0 3
+b0 Z
+1"
+1.
+#91
+0U
+0O
+0Y
+b0 9
+b0 I
+b0 M
+0S
+0H
+b0 5
+b0 :
+b0 L
+0B
+#93
+0&
+#100
+1$
+#120
+b0 /
+0(
+1)
+#129
+0V
+0P
+#139
+b0 *
+b0 6
+b0 J
+b0 [
+#170
+0%
+b0 0
+#178
+0.
+#180
+1'
+0)
+#220
+0$
+#238
+0#
+#267
+1D
+1C
+1=
+b11 4
+b10 ,
+b10 1
+b10 7
+b10 ;
+b10 ^
+b11 -
+b11 2
+b11 8
+b11 <
+b11 ]
+1.
+#300
+1G
+1A
+#356
+0.
+#358
+1U
+1O
+1H
+b11 5
+b11 :
+b11 L
+1B
+#391
+1W
+1Q
+#445
+0D
+0C
+b0 4
+b11 +
+b11 3
+b11 Z
+b0 ,
+b0 1
+b0 7
+b0 ;
+b0 ^
+b1 -
+b1 2
+b1 8
+b1 <
+b1 ]
+1!
+1.
+#449
+1Y
+b11 9
+b11 I
+b11 M
+1S
+#478
+0G
+#485
+0E
+0?
+#495
+b10 \
+b11 *
+b11 6
+b11 J
+b11 [
+#518
+0A
+#534
+0.
+#536
+0U
+b1 5
+b1 :
+b1 L
+0H
+#569
+0W
+#576
+0O
+b0 5
+b0 :
+b0 L
+0B
+#609
+0Q
+#623
+1D
+0=
+b10 4
+b10 ,
+b10 1
+b10 7
+b10 ;
+b10 ^
+b0 -
+b0 2
+b0 8
+b0 <
+b0 ]
+b0 +
+b0 3
+b0 Z
+1.
+#627
+b1 9
+b1 I
+b1 M
+0Y
+#656
+1F
+#667
+b0 9
+b0 I
+b0 M
+0S
+#673
+b0 *
+b0 6
+b0 J
+b0 [
+#712
+0.
+#714
+1U
+b10 5
+b10 :
+b10 L
+1H
+#747
+1W
+#801
+1>
+1C
+1=
+b11 4
+b10 +
+b10 3
+b10 Z
+b11 ,
+b11 1
+b11 7
+b11 ;
+b11 ^
+b11 -
+b11 2
+b11 8
+b11 <
+b11 ]
+0!
+1.
+#805
+b10 9
+b10 I
+b10 M
+1Y
+#834
+0F
+#841
+1E
+1?
+#851
+b11 \
+b10 *
+b10 6
+b10 J
+b10 [
+#874
+1G
+1A
+#890
+0.
+#932
+1O
+b11 5
+b11 :
+b11 L
+1B
+#965
+1Q
+#979
+0D
+0C
+0=
+b1 4
+b1 ,
+b1 1
+b1 7
+b1 ;
+b1 ^
+b0 -
+b0 2
+b0 8
+b0 <
+b0 ]
+1!
+b11 +
+b11 3
+b11 Z
+1.
+#1012
+0G
+0A
+1@
+#1019
+0E
+0?
+#1023
+b11 9
+b11 I
+b11 M
+1S
+#1029
+b100 \
+b11 *
+b11 6
+b11 J
+b11 [
+#1068
+0.
+#1070
+0U
+b1 5
+b1 :
+b1 L
+0H
+#1103
+0W
+#1157
+0>
+1C
+b10 4
+b1 +
+b1 3
+b1 Z
+b0 ,
+b0 1
+b0 7
+b0 ;
+b0 ^
+b10 -
+b10 2
+b10 8
+b10 <
+b10 ]
+0!
+1.
+#1161
+b1 9
+b1 I
+b1 M
+0Y
+#1190
+0@
+#1197
+1E
+1?
+#1207
+b1 *
+b1 6
+b1 J
+b1 [
+#1230
+1G
+#1246
+0.
+#1248
+0O
+b0 5
+b0 :
+b0 L
+0B
+#1281
+0Q
+#1288
+1U
+b10 5
+b10 :
+b10 L
+1H
+#1321
+1W
+#1335
+b10 +
+b10 3
+b10 Z
+1.
+#1339
+b0 9
+b0 I
+b0 M
+0S
+#1379
+b10 9
+b10 I
+b10 M
+1Y
+#1385
+b101 \
+b10 *
+b10 6
+b10 J
+b10 [
+#1424
+0.
+#1513
+1.
+#1602
+0.
+#1691
+1.
+#1780
+0.
+#1869
+1.

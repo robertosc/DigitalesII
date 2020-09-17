@@ -1,0 +1,15 @@
+read_verilog ./src/mux4a1_4b/mux4a1_4b.v
+
+hierarchy -check -top mux4a1_4b
+
+proc; opt; memory; opt; fsm; opt;
+
+techmap; opt;
+
+dfflibmap -liberty ./lib/cmos_cells.lib
+
+abc -liberty ./lib/cmos_cells.lib
+
+clean
+
+write_verilog sintetizado4a1_4b_cmos.v

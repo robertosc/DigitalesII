@@ -67,7 +67,7 @@ module probador_mux(input [3:0] data_conductual,
       valid_3 <= 0;
 
       @(posedge clk);
-      valid_1 <= 1;
+      valid_1 <= 0;
       valid_0 <= 1;
       valid_2 <= 0;
       valid_3 <= 1;

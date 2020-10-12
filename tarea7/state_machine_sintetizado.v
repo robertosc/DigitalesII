@@ -3,26 +3,22 @@
 (* dynports =  1  *)
 (* cells_not_processed =  1  *)
 (* src = "state_machine_sintetizado.v:1" *)
-module state_machine_sintetizado(reset, clk, data_bus, data_out_bus_sint, control_out_sint, error_sint);
-  (* src = "state_machine_sintetizado.v:27" *)
-  wire [4:0] _000_;
-  (* src = "state_machine_sintetizado.v:27" *)
+module state_machine_sintetizado(reset, clk, data_bus, error_sint);
+  (* src = "state_machine_sintetizado.v:24" *)
+  wire [3:0] _000_;
+  (* src = "state_machine_sintetizado.v:24" *)
   wire _001_;
-  (* src = "state_machine_sintetizado.v:27" *)
+  (* src = "state_machine_sintetizado.v:24" *)
   wire [3:0] _002_;
-  (* src = "state_machine_sintetizado.v:47" *)
   wire _003_;
-  (* src = "state_machine_sintetizado.v:27" *)
-  wire [4:0] _004_;
+  wire _004_;
   wire _005_;
   wire _006_;
   wire _007_;
   wire _008_;
   wire _009_;
   wire _010_;
-  (* src = "state_machine_sintetizado.v:14" *)
   wire _011_;
-  (* src = "state_machine_sintetizado.v:14" *)
   wire _012_;
   wire _013_;
   wire _014_;
@@ -111,635 +107,598 @@ module state_machine_sintetizado(reset, clk, data_bus, data_out_bus_sint, contro
   wire _097_;
   wire _098_;
   wire _099_;
-  wire _100_;
-  wire _101_;
-  wire _102_;
-  (* src = "state_machine_sintetizado.v:18" *)
-  wire [3:0] buffer;
   (* src = "state_machine_sintetizado.v:6" *)
   input clk;
-  (* src = "state_machine_sintetizado.v:9" *)
-  output [3:0] control_out_sint;
-  (* src = "state_machine_sintetizado.v:15" *)
-  wire [4:0] counter;
+  (* src = "state_machine_sintetizado.v:13" *)
+  wire [3:0] counter;
   (* src = "state_machine_sintetizado.v:7" *)
   input [15:0] data_bus;
   (* src = "state_machine_sintetizado.v:8" *)
-  output [15:0] data_out_bus_sint;
-  (* src = "state_machine_sintetizado.v:10" *)
   output error_sint;
-  (* src = "state_machine_sintetizado.v:18" *)
-  wire [3:0] f_code;
   (* src = "state_machine_sintetizado.v:16" *)
-  wire next_error_sint;
-  (* src = "state_machine_sintetizado.v:14" *)
-  (* unused_bits = "0 1 2" *)
-  wire [4:0] next_state;
+  wire [3:0] f_code;
+  (* src = "state_machine_sintetizado.v:15" *)
+  wire [31:0] k;
+  (* src = "state_machine_sintetizado.v:13" *)
+  (* unused_bits = "0 1 2 3" *)
+  wire [3:0] next_counter;
   (* src = "state_machine_sintetizado.v:5" *)
   input reset;
   (* onehot = 32'd1 *)
   wire [4:0] state;
+  NOT _100_ (
+    .A(state[3]),
+    .Y(_035_)
+  );
+  NOT _101_ (
+    .A(state[2]),
+    .Y(_036_)
+  );
+  NOT _102_ (
+    .A(state[0]),
+    .Y(_037_)
+  );
   NOT _103_ (
-    .A(state[1]),
-    .Y(_048_)
+    .A(counter[3]),
+    .Y(_038_)
   );
   NOT _104_ (
-    .A(state[4]),
-    .Y(_049_)
+    .A(f_code[3]),
+    .Y(_039_)
   );
   NOT _105_ (
-    .A(state[0]),
-    .Y(_050_)
+    .A(reset),
+    .Y(_003_)
   );
   NOT _106_ (
-    .A(f_code[3]),
-    .Y(_051_)
+    .A(f_code[0]),
+    .Y(_040_)
   );
   NOT _107_ (
-    .A(reset),
-    .Y(_005_)
+    .A(f_code[2]),
+    .Y(_041_)
   );
   NOT _108_ (
-    .A(f_code[2]),
-    .Y(_052_)
+    .A(f_code[1]),
+    .Y(_042_)
   );
   NOT _109_ (
-    .A(next_error_sint),
-    .Y(_053_)
+    .A(data_bus[0]),
+    .Y(_043_)
   );
   NOT _110_ (
-    .A(data_bus[1]),
-    .Y(_054_)
+    .A(data_bus[3]),
+    .Y(_044_)
   );
   NOT _111_ (
-    .A(data_bus[2]),
-    .Y(_055_)
+    .A(data_bus[12]),
+    .Y(_045_)
   );
   NOT _112_ (
-    .A(data_bus[14]),
-    .Y(_056_)
+    .A(data_bus[13]),
+    .Y(_046_)
   );
   NOT _113_ (
+    .A(data_bus[14]),
+    .Y(_047_)
+  );
+  NOT _114_ (
     .A(data_bus[15]),
+    .Y(_048_)
+  );
+  NOR _115_ (
+    .A(state[3]),
+    .B(state[2]),
+    .Y(_049_)
+  );
+  NAND _116_ (
+    .A(_035_),
+    .B(_036_),
+    .Y(_050_)
+  );
+  NOR _117_ (
+    .A(f_code[1]),
+    .B(data_bus[1]),
+    .Y(_051_)
+  );
+  NAND _118_ (
+    .A(f_code[1]),
+    .B(data_bus[1]),
+    .Y(_052_)
+  );
+  NOT _119_ (
+    .A(_052_),
+    .Y(_053_)
+  );
+  NOR _120_ (
+    .A(_051_),
+    .B(_053_),
+    .Y(_054_)
+  );
+  NOR _121_ (
+    .A(f_code[0]),
+    .B(data_bus[0]),
+    .Y(_055_)
+  );
+  NOR _122_ (
+    .A(_040_),
+    .B(_043_),
+    .Y(_056_)
+  );
+  NOR _123_ (
+    .A(_055_),
+    .B(_056_),
     .Y(_057_)
   );
-  NAND _114_ (
-    .A(f_code[1]),
-    .B(data_bus[13]),
+  NAND _124_ (
+    .A(_054_),
+    .B(_057_),
     .Y(_058_)
   );
-  NOT _115_ (
-    .A(_058_),
+  NOR _125_ (
+    .A(f_code[3]),
+    .B(data_bus[3]),
     .Y(_059_)
   );
-  NOR _116_ (
-    .A(f_code[1]),
-    .B(data_bus[13]),
+  NAND _126_ (
+    .A(f_code[3]),
+    .B(data_bus[3]),
     .Y(_060_)
   );
-  NOT _117_ (
+  NOT _127_ (
     .A(_060_),
     .Y(_061_)
   );
-  NAND _118_ (
-    .A(_058_),
+  NOR _128_ (
+    .A(_059_),
     .B(_061_),
     .Y(_062_)
   );
-  NOR _119_ (
-    .A(_059_),
-    .B(_060_),
+  NOR _129_ (
+    .A(f_code[2]),
+    .B(data_bus[2]),
     .Y(_063_)
   );
-  NAND _120_ (
-    .A(f_code[0]),
-    .B(data_bus[12]),
+  NAND _130_ (
+    .A(f_code[2]),
+    .B(data_bus[2]),
     .Y(_064_)
   );
-  NOT _121_ (
+  NOT _131_ (
     .A(_064_),
     .Y(_065_)
   );
-  NOR _122_ (
-    .A(f_code[0]),
-    .B(data_bus[12]),
+  NOR _132_ (
+    .A(_063_),
+    .B(_065_),
     .Y(_066_)
   );
-  NOT _123_ (
-    .A(_066_),
+  NAND _133_ (
+    .A(_062_),
+    .B(_066_),
     .Y(_067_)
   );
-  NAND _124_ (
-    .A(_064_),
+  NOR _134_ (
+    .A(_058_),
     .B(_067_),
     .Y(_068_)
   );
-  NOR _125_ (
-    .A(_065_),
-    .B(_066_),
+  NOT _135_ (
+    .A(_068_),
     .Y(_069_)
   );
-  NOR _126_ (
-    .A(_063_),
-    .B(_069_),
+  NOR _136_ (
+    .A(state[1]),
+    .B(state[4]),
     .Y(_070_)
   );
-  NAND _127_ (
-    .A(_062_),
-    .B(_068_),
+  NOR _137_ (
+    .A(_068_),
+    .B(_070_),
     .Y(_071_)
   );
-  NOR _128_ (
-    .A(_051_),
-    .B(data_bus[15]),
+  NOR _138_ (
+    .A(_050_),
+    .B(_071_),
     .Y(_072_)
   );
-  NAND _129_ (
-    .A(f_code[3]),
-    .B(_057_),
+  NOR _139_ (
+    .A(_042_),
+    .B(data_bus[13]),
     .Y(_073_)
   );
-  NOR _130_ (
-    .A(f_code[3]),
-    .B(_057_),
+  NOR _140_ (
+    .A(f_code[1]),
+    .B(_046_),
     .Y(_074_)
   );
-  NAND _131_ (
-    .A(_051_),
-    .B(data_bus[15]),
+  NOR _141_ (
+    .A(_073_),
+    .B(_074_),
     .Y(_075_)
   );
-  NOR _132_ (
-    .A(_072_),
-    .B(_074_),
+  NOR _142_ (
+    .A(_040_),
+    .B(data_bus[12]),
     .Y(_076_)
   );
-  NAND _133_ (
-    .A(_073_),
-    .B(_075_),
+  NOR _143_ (
+    .A(f_code[0]),
+    .B(_045_),
     .Y(_077_)
   );
-  NOR _134_ (
-    .A(_052_),
-    .B(data_bus[14]),
+  NOR _144_ (
+    .A(_076_),
+    .B(_077_),
     .Y(_078_)
   );
-  NAND _135_ (
-    .A(f_code[2]),
-    .B(_056_),
+  NAND _145_ (
+    .A(_075_),
+    .B(_078_),
     .Y(_079_)
   );
-  NOR _136_ (
-    .A(f_code[2]),
-    .B(_056_),
+  NOR _146_ (
+    .A(_039_),
+    .B(data_bus[15]),
     .Y(_080_)
   );
-  NAND _137_ (
-    .A(_052_),
-    .B(data_bus[14]),
+  NOR _147_ (
+    .A(f_code[3]),
+    .B(_048_),
     .Y(_081_)
   );
-  NOR _138_ (
-    .A(_078_),
-    .B(_080_),
+  NOR _148_ (
+    .A(_080_),
+    .B(_081_),
     .Y(_082_)
   );
-  NAND _139_ (
-    .A(_079_),
-    .B(_081_),
+  NOR _149_ (
+    .A(_041_),
+    .B(data_bus[14]),
     .Y(_083_)
   );
-  NOR _140_ (
-    .A(_077_),
-    .B(_083_),
+  NOR _150_ (
+    .A(f_code[2]),
+    .B(_047_),
     .Y(_084_)
   );
-  NAND _141_ (
-    .A(_076_),
-    .B(_082_),
+  NOR _151_ (
+    .A(_083_),
+    .B(_084_),
     .Y(_085_)
   );
-  NOR _142_ (
-    .A(_071_),
+  NAND _152_ (
+    .A(_082_),
     .B(_085_),
     .Y(_086_)
   );
-  NAND _143_ (
-    .A(_070_),
-    .B(_084_),
+  NOR _153_ (
+    .A(_079_),
+    .B(_086_),
     .Y(_087_)
   );
-  NAND _144_ (
+  NAND _154_ (
     .A(reset),
-    .B(_086_),
+    .B(_087_),
     .Y(_088_)
   );
-  NOT _145_ (
+  NOT _155_ (
     .A(_088_),
     .Y(_089_)
   );
-  NOR _146_ (
-    .A(counter[4]),
-    .B(data_bus[0]),
+  NAND _156_ (
+    .A(_038_),
+    .B(_043_),
     .Y(_090_)
   );
-  NAND _147_ (
-    .A(_054_),
-    .B(_055_),
+  NOR _157_ (
+    .A(data_bus[1]),
+    .B(data_bus[2]),
     .Y(_091_)
   );
-  NOR _148_ (
-    .A(data_bus[3]),
+  NAND _158_ (
+    .A(_044_),
     .B(_091_),
     .Y(_092_)
   );
-  NAND _149_ (
-    .A(_090_),
-    .B(_092_),
+  NOR _159_ (
+    .A(data_bus[1]),
+    .B(data_bus[3]),
     .Y(_093_)
   );
-  NOT _150_ (
-    .A(_093_),
+  NOR _160_ (
+    .A(data_bus[2]),
+    .B(_090_),
     .Y(_094_)
   );
-  NOR _151_ (
-    .A(state[3]),
-    .B(state[2]),
+  NOR _161_ (
+    .A(_090_),
+    .B(_092_),
     .Y(_095_)
   );
-  NOT _152_ (
-    .A(_095_),
+  NAND _162_ (
+    .A(_093_),
+    .B(_094_),
     .Y(_096_)
   );
-  NOR _153_ (
-    .A(_093_),
-    .B(_095_),
+  NAND _163_ (
+    .A(data_bus[1]),
+    .B(data_bus[2]),
     .Y(_097_)
   );
-  NAND _154_ (
-    .A(_089_),
-    .B(_097_),
+  NOT _164_ (
+    .A(_097_),
     .Y(_098_)
   );
-  NOT _155_ (
-    .A(_098_),
-    .Y(_006_)
-  );
-  NAND _156_ (
-    .A(reset),
-    .B(_087_),
+  NAND _165_ (
+    .A(data_bus[3]),
+    .B(_098_),
     .Y(_099_)
   );
-  NAND _157_ (
-    .A(_048_),
-    .B(_049_),
-    .Y(_100_)
+  NAND _166_ (
+    .A(counter[3]),
+    .B(data_bus[0]),
+    .Y(_009_)
   );
-  NOR _158_ (
-    .A(_096_),
-    .B(_100_),
-    .Y(_101_)
+  NOR _167_ (
+    .A(_043_),
+    .B(_099_),
+    .Y(_010_)
   );
-  NOR _159_ (
+  NOR _168_ (
     .A(_099_),
-    .B(_101_),
-    .Y(_008_)
+    .B(_009_),
+    .Y(_011_)
   );
-  NOT _160_ (
-    .A(_008_),
-    .Y(_102_)
+  NAND _169_ (
+    .A(counter[3]),
+    .B(_010_),
+    .Y(_012_)
   );
-  NAND _161_ (
-    .A(_098_),
-    .B(_102_),
-    .Y(_004_[1])
-  );
-  NAND _162_ (
-    .A(state[0]),
-    .B(reset),
+  NOR _170_ (
+    .A(_095_),
+    .B(_011_),
     .Y(_013_)
   );
-  NOT _163_ (
-    .A(_013_),
+  NAND _171_ (
+    .A(_096_),
+    .B(_012_),
     .Y(_014_)
   );
-  NAND _164_ (
-    .A(_095_),
-    .B(_100_),
+  NAND _172_ (
+    .A(_050_),
+    .B(_014_),
     .Y(_015_)
   );
-  NOR _165_ (
-    .A(_088_),
+  NAND _173_ (
+    .A(_089_),
     .B(_015_),
     .Y(_016_)
   );
-  NOR _166_ (
-    .A(_014_),
-    .B(_016_),
+  NAND _174_ (
+    .A(_050_),
+    .B(_013_),
     .Y(_017_)
   );
-  NOT _167_ (
-    .A(_017_),
-    .Y(_007_)
-  );
-  NAND _168_ (
-    .A(_099_),
-    .B(_017_),
-    .Y(_004_[0])
-  );
-  NAND _169_ (
-    .A(_093_),
-    .B(_096_),
+  NOR _175_ (
+    .A(_050_),
+    .B(_088_),
     .Y(_018_)
   );
-  NOR _170_ (
-    .A(_088_),
-    .B(_018_),
-    .Y(_004_[2])
+  NOR _176_ (
+    .A(_072_),
+    .B(_016_),
+    .Y(_004_)
   );
-  NOR _171_ (
-    .A(_094_),
-    .B(_100_),
+  NAND _177_ (
+    .A(_049_),
+    .B(_070_),
     .Y(_019_)
   );
-  NOR _172_ (
-    .A(_087_),
+  NAND _178_ (
+    .A(reset),
     .B(_019_),
     .Y(_020_)
   );
-  NOR _173_ (
-    .A(state[0]),
+  NOR _179_ (
+    .A(_087_),
     .B(_020_),
-    .Y(_003_)
+    .Y(_007_)
   );
-  NOR _174_ (
-    .A(f_code[3]),
+  NAND _180_ (
+    .A(state[0]),
     .B(reset),
     .Y(_021_)
   );
-  NOT _175_ (
-    .A(_021_),
-    .Y(_002_[3])
-  );
-  NOR _176_ (
-    .A(reset),
-    .B(f_code[0]),
+  NOR _181_ (
+    .A(_069_),
+    .B(_070_),
     .Y(_022_)
   );
-  NOT _177_ (
-    .A(_022_),
-    .Y(_002_[0])
-  );
-  NOR _178_ (
-    .A(reset),
-    .B(f_code[2]),
+  NAND _182_ (
+    .A(_018_),
+    .B(_022_),
     .Y(_023_)
   );
-  NOT _179_ (
-    .A(_023_),
-    .Y(_002_[2])
+  NAND _183_ (
+    .A(_021_),
+    .B(_023_),
+    .Y(_006_)
   );
-  NOR _180_ (
-    .A(reset),
-    .B(f_code[1]),
-    .Y(_024_)
-  );
-  NOT _181_ (
-    .A(_024_),
-    .Y(_002_[1])
-  );
-  NAND _182_ (
-    .A(_050_),
-    .B(_086_),
-    .Y(_025_)
-  );
-  NOR _183_ (
-    .A(_100_),
-    .B(_025_),
-    .Y(_026_)
-  );
-  NAND _184_ (
-    .A(_011_),
-    .B(_095_),
-    .Y(_027_)
+  NOR _184_ (
+    .A(_088_),
+    .B(_015_),
+    .Y(_005_)
   );
   NAND _185_ (
-    .A(_026_),
-    .B(_027_),
-    .Y(_028_)
+    .A(_039_),
+    .B(reset),
+    .Y(_002_[3])
   );
   NAND _186_ (
-    .A(_012_),
-    .B(_101_),
-    .Y(_029_)
+    .A(reset),
+    .B(_040_),
+    .Y(_002_[0])
   );
   NAND _187_ (
-    .A(_086_),
-    .B(_029_),
+    .A(reset),
+    .B(_041_),
+    .Y(_002_[2])
+  );
+  NAND _188_ (
+    .A(reset),
+    .B(_042_),
+    .Y(_002_[1])
+  );
+  NAND _189_ (
+    .A(_087_),
+    .B(_017_),
+    .Y(_024_)
+  );
+  NOR _190_ (
+    .A(_071_),
+    .B(_024_),
+    .Y(_025_)
+  );
+  NAND _191_ (
+    .A(_037_),
+    .B(reset),
+    .Y(_026_)
+  );
+  NOR _192_ (
+    .A(_025_),
+    .B(_026_),
+    .Y(_001_)
+  );
+  NOR _193_ (
+    .A(state[0]),
+    .B(_088_),
+    .Y(_027_)
+  );
+  NOT _194_ (
+    .A(_027_),
+    .Y(_028_)
+  );
+  NOR _195_ (
+    .A(_038_),
+    .B(_070_),
+    .Y(_029_)
+  );
+  NOR _196_ (
+    .A(_049_),
+    .B(_096_),
     .Y(_030_)
   );
-  NOR _188_ (
-    .A(_097_),
+  NOR _197_ (
+    .A(_029_),
     .B(_030_),
     .Y(_031_)
   );
-  NOR _189_ (
-    .A(state[0]),
-    .B(_031_),
+  NAND _198_ (
+    .A(counter[3]),
+    .B(_027_),
     .Y(_032_)
   );
-  NOT _190_ (
-    .A(_032_),
-    .Y(_033_)
+  NOR _199_ (
+    .A(_070_),
+    .B(_032_),
+    .Y(_000_[3])
   );
-  NOR _191_ (
+  NOR _200_ (
     .A(_028_),
-    .B(_033_),
-    .Y(_034_)
-  );
-  NOR _192_ (
-    .A(_018_),
-    .B(_025_),
-    .Y(_035_)
-  );
-  NOT _193_ (
-    .A(_035_),
-    .Y(_036_)
-  );
-  NAND _194_ (
-    .A(_028_),
-    .B(_036_),
-    .Y(_037_)
-  );
-  NOR _195_ (
-    .A(_032_),
-    .B(_037_),
-    .Y(_038_)
-  );
-  NOR _196_ (
-    .A(_034_),
-    .B(_038_),
-    .Y(_039_)
-  );
-  NOR _197_ (
-    .A(counter[4]),
-    .B(_039_),
-    .Y(_040_)
-  );
-  NAND _198_ (
-    .A(counter[4]),
-    .B(reset),
-    .Y(_041_)
-  );
-  NOT _199_ (
-    .A(_041_),
-    .Y(_042_)
-  );
-  NAND _200_ (
-    .A(_039_),
-    .B(_042_),
-    .Y(_043_)
-  );
-  NOT _201_ (
-    .A(_043_),
-    .Y(_000_[4])
-  );
-  NAND _202_ (
-    .A(reset),
-    .B(_040_),
-    .Y(_044_)
-  );
-  NAND _203_ (
-    .A(_043_),
-    .B(_044_),
+    .B(_031_),
     .Y(_000_[0])
   );
-  NOR _204_ (
-    .A(error_sint),
-    .B(_039_),
-    .Y(_045_)
+  NAND _201_ (
+    .A(_037_),
+    .B(_087_),
+    .Y(_033_)
   );
-  NAND _205_ (
-    .A(_053_),
-    .B(_039_),
-    .Y(_046_)
+  NAND _202_ (
+    .A(state[1]),
+    .B(_069_),
+    .Y(_034_)
   );
-  NAND _206_ (
-    .A(reset),
-    .B(_046_),
-    .Y(_047_)
+  NOR _203_ (
+    .A(_033_),
+    .B(_034_),
+    .Y(_008_)
   );
-  NOR _207_ (
-    .A(_045_),
-    .B(_047_),
-    .Y(_001_)
-  );
-  NOR _208_ (
-    .A(state[0]),
-    .B(_026_),
-    .Y(_009_)
-  );
-  NAND _209_ (
-    .A(_095_),
-    .B(_026_),
-    .Y(_010_)
-  );
-  DFF _210_ (
+  DFF _204_ (
     .C(clk),
-    .D(_005_),
+    .D(_003_),
     .Q(state[0])
   );
-  DFF _211_ (
+  DFF _205_ (
     .C(clk),
-    .D(_004_[2]),
+    .D(_004_),
     .Q(state[1])
   );
-  DFF _212_ (
+  DFF _206_ (
     .C(clk),
-    .D(_006_),
+    .D(_005_),
     .Q(state[2])
   );
-  DFF _213_ (
+  DFF _207_ (
     .C(clk),
-    .D(_007_),
+    .D(_006_),
     .Q(state[3])
   );
-  DFF _214_ (
+  DFF _208_ (
     .C(clk),
-    .D(_008_),
+    .D(_007_),
     .Q(state[4])
   );
-  (* src = "state_machine_sintetizado.v:27" *)
-  DFF _215_ (
+  (* src = "state_machine_sintetizado.v:24" *)
+  DFF _209_ (
+    .C(clk),
+    .D(_000_[0]),
+    .Q(counter[3])
+  );
+  (* src = "state_machine_sintetizado.v:24" *)
+  DFF _210_ (
+    .C(clk),
+    .D(_000_[3]),
+    .Q(counter[3])
+  );
+  (* src = "state_machine_sintetizado.v:24" *)
+  DFF _211_ (
     .C(clk),
     .D(_001_),
     .Q(error_sint)
   );
-  (* src = "state_machine_sintetizado.v:27" *)
-  DFF _216_ (
-    .C(clk),
-    .D(_004_[0]),
-    .Q(_011_)
-  );
-  (* src = "state_machine_sintetizado.v:27" *)
-  DFF _217_ (
-    .C(clk),
-    .D(_004_[1]),
-    .Q(_012_)
-  );
-  (* src = "state_machine_sintetizado.v:27" *)
-  DFF _218_ (
-    .C(clk),
-    .D(_000_[0]),
-    .Q(counter[4])
-  );
-  (* src = "state_machine_sintetizado.v:27" *)
-  DFF _219_ (
-    .C(clk),
-    .D(_000_[4]),
-    .Q(counter[4])
-  );
-  (* src = "state_machine_sintetizado.v:27" *)
-  DFF _220_ (
+  (* src = "state_machine_sintetizado.v:24" *)
+  DFF _212_ (
     .C(clk),
     .D(_002_[0]),
     .Q(f_code[0])
   );
-  (* src = "state_machine_sintetizado.v:27" *)
-  DFF _221_ (
+  (* src = "state_machine_sintetizado.v:24" *)
+  DFF _213_ (
     .C(clk),
     .D(_002_[1]),
     .Q(f_code[1])
   );
-  (* src = "state_machine_sintetizado.v:27" *)
-  DFF _222_ (
+  (* src = "state_machine_sintetizado.v:24" *)
+  DFF _214_ (
     .C(clk),
     .D(_002_[2]),
     .Q(f_code[2])
   );
-  (* src = "state_machine_sintetizado.v:27" *)
-  DFF _223_ (
+  (* src = "state_machine_sintetizado.v:24" *)
+  DFF _215_ (
     .C(clk),
     .D(_002_[3]),
     .Q(f_code[3])
   );
-  (* src = "state_machine_sintetizado.v:47" *)
-  \$_DLATCH_P_  _224_ (
+  (* src = "state_machine_sintetizado.v:41" *)
+  \$_DLATCH_P_  _216_ (
     .D(1'h0),
-    .E(_009_),
-    .Q(counter[4])
+    .E(_008_),
+    .Q(counter[3])
   );
-  (* src = "state_machine_sintetizado.v:47" *)
-  \$_DLATCH_P_  _225_ (
-    .D(_003_),
-    .E(_010_),
-    .Q(next_error_sint)
-  );
-  assign _000_[3:1] = { _000_[4], _000_[4], _000_[4] };
-  assign _004_[4:3] = 2'h0;
-  assign buffer = data_bus[3:0];
-  assign control_out_sint = 4'h0;
-  assign counter[3:0] = { counter[4], counter[4], counter[4], counter[4] };
-  assign data_out_bus_sint = 16'h0000;
-  assign next_state[4:3] = 2'h0;
+  assign _000_[2:1] = { _000_[3], _000_[3] };
+  assign counter[2:0] = { counter[3], counter[3], counter[3] };
+  assign k = 32'd4;
+  assign next_counter[2:1] = { next_counter[3], next_counter[3] };
 endmodule

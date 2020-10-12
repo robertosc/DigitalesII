@@ -7,7 +7,7 @@
 
 
 module BancoPruebas;
-	wire [3:0] data_in0, data_in1, data_in2, data_in3, data_conductual, data_estructural; //Se generan los cables de entrada (buses)
+	wire [3:0] data_in0, data_in1, data_in2, data_in3, data_conductual, data_estructural; //cables
 	wire       clk, salMux1, salMux2, reset_L, valid_2, valid_3, valid_0, valid_1, valid_out_conductual, valid_out_estructural; 
 	wire [1:0] selector;
 

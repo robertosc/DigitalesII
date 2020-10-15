@@ -20,6 +20,7 @@ module probador#(parameter BUS_SIZE = 16,
 		reset <= 0;
 		@(posedge clk);
 		@(posedge clk);
+		@(posedge clk);
 		data_bus <= 16'hFBA0;
 		reset <= 1;
 		repeat (2) begin
@@ -39,6 +40,6 @@ module probador#(parameter BUS_SIZE = 16,
 		$finish;
 	end
 
-	initial	clk 	<= 0;
+	initial	clk 	<= 1;
 	always	#15 clk 	<= ~clk;
 endmodule

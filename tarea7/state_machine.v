@@ -15,18 +15,18 @@ module state_machine #(parameter BUS_SIZE = 16,
 	integer k;
 	reg [WORD_SIZE-1:0] buffer, f_code;
 
-	parameter [3:0] RESET = 3'b000;
-	parameter [3:0] FIRST_PKT = 3'b001;
-	parameter [3:0] REG_PKT = 3'b010;
-	parameter [3:0] F_ERR = 3'b011;
-	parameter [3:0] SEQ_ERR = 3'b100;
+	parameter [4:0] RESET = 0;
+	parameter [4:0] FIRST_PKT = 1;
+	parameter [4:0] REG_PKT = 2;
+	parameter [4:0] F_ERR = 3;
+	parameter [4:0] SEQ_ERR = 4;
 
 	always @(posedge clk) begin
 		if(reset == 0) begin
 			k <= 0;
 			error <= 0;
 			counter <= 0;
-			state <= RESET;
+			state <= 0;
 			for (k = 0; k < WORD_SIZE; k=k+1) begin
 				f_code[k] <= 1;
 			end
@@ -39,7 +39,7 @@ module state_machine #(parameter BUS_SIZE = 16,
 	end
 
 	always @(*) begin		//Lógica combinacional que saca el próximo estado
-		next_state = state;
+        next_state = state;
         next_counter = counter;
         next_error = error;
         buffer = data_bus[WORD_SIZE-1:0];
@@ -49,7 +49,7 @@ module state_machine #(parameter BUS_SIZE = 16,
             next_error = 0;
             next_counter = 1;
         end
-        if(data_bus[BUS_SIZE-1:BUS_SIZE-WORD_SIZE] == f_code) begin
+        else if(data_bus[BUS_SIZE-1:BUS_SIZE-WORD_SIZE] == f_code) begin
         case (state)
             FIRST_PKT: begin
                 if (buffer == counter) begin
@@ -66,6 +66,7 @@ module state_machine #(parameter BUS_SIZE = 16,
             REG_PKT: begin
                 if (buffer == counter) begin
                     next_counter = counter + 1;
+                    next_error = 0;
                 end
                 else begin
                     next_counter = 0;
@@ -77,6 +78,7 @@ module state_machine #(parameter BUS_SIZE = 16,
                 if (buffer == counter) begin
                     next_state = FIRST_PKT;
                     next_counter = counter + 1;
+                    next_error = 0;
                 end
                 else begin
                     next_state = SEQ_ERR;
@@ -88,6 +90,7 @@ module state_machine #(parameter BUS_SIZE = 16,
                 if (buffer == counter) begin
                     next_state = FIRST_PKT;
                     next_counter = counter + 1;
+                    next_error = 0;
                 end
                 else begin
                     next_state = SEQ_ERR;
@@ -101,5 +104,6 @@ module state_machine #(parameter BUS_SIZE = 16,
             next_error = 1;
             next_counter = 0;
         end
+        //end
     end
 endmodule

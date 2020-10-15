@@ -1,6 +1,6 @@
 read_verilog generate_mod.v
 
-proc; opt; memory; opt; fsm; opt;
+proc; opt; memory; opt; 
 
 techmap; opt;
 

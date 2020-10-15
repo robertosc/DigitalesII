@@ -1,9 +1,9 @@
 `include "probador.v"
 `include "state_machine.v"
 `include "state_machine_sintetizado.v"
-`include "buffer_gen.v"
 `include "generate_mod.v"
 `include "./lib/cmos_cells.v"
+`include "generate_mod_sintetizado.v"
 
 module bancopruebas();
     parameter BUS_SIZE = 16;
@@ -25,13 +25,28 @@ generate_mod#(
     .WORD_NUM     ( BUS_SIZE/WORD_SIZE )
 )u_generate_mod(
     .data_bus     ( data_bus [BUS_SIZE-1:0]    ),
+    .clk          (clk                          ),
     .data_out_bus ( data_out_bus [BUS_SIZE-1:0] ),
     .control_out  ( control_out [WORD_NUM-1:0]  )
 );
 
+generate_mod_sintetizado #(
+    .BUS_SIZE (16),
+    .WORD_SIZE(4),
+    .WORD_NUM (BUS_SIZE/WORD_SIZE)
+)generate_mod_sintetizado_1(
+    .data_bus (data_bus[BUS_SIZE-1:0]),
+    .clk      (clk),
+    .data_out_bus_sint (data_out_bus_sint [BUS_SIZE-1:0]),
+    .control_out_sint (control_out_sint [WORD_NUM-1:0])
+);
 
 
-state_machine u_state_machine(
+state_machine #(
+    .BUS_SIZE     ( 16 ),
+    .WORD_SIZE    ( 4 ),
+    .WORD_NUM     ( BUS_SIZE/WORD_SIZE )
+    ) u_state_machine (
     .reset        ( reset        ),
     .clk          ( clk          ),
     .data_bus     ( data_bus [BUS_SIZE-1:0] ),
@@ -50,7 +65,11 @@ probador u_probador(
     .data_bus     ( data_bus  [BUS_SIZE-1:0])
 );
 
-state_machine_sintetizado  u_state_machine_sint(
+state_machine_sintetizado #(
+    .BUS_SIZE     ( 16 ),
+    .WORD_SIZE    ( 4 ),
+    .WORD_NUM     ( BUS_SIZE/WORD_SIZE )
+    ) u_state_machine_sint (
     .reset        ( reset        ),
     .clk          ( clk          ),
     .data_bus     ( data_bus [BUS_SIZE-1:0] ),
